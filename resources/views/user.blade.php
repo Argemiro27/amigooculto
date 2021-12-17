@@ -1,18 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
 <!-- PÁGINA INICIAL - PERFIL -->
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>SECRET FRIEND</title>
-  <link rel="stylesheet" href="{{asset('css/initial/inicio.css')}}" />
+  <link rel="stylesheet" href="{{asset('css/layout.css')}}" />
 </head>
 <body>
   <main>
     <h2>Seu perfil</h2>
     <br></br>
-    <h3>Olá, Jubiscleibisom da Silva!</h3>
+    <h3>Olá, {{$user->name}}!</h3>
     <br></br>
     <div class="button">
         <br>

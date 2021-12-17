@@ -1,5 +1,5 @@
-@extends('adm.layout')
 <!-- CRIAR JOGO -->
+@extends('adm.layout')
 @section('content')
 @if(count($errors) > 0)
 <ul class="validator">
@@ -37,6 +37,10 @@
   <div class="row">
     <label class="col-2" for="E-mail">E-mail</label>
     <input type="test" name="E-mail" id="email" class="col-5" value="{{ old('email') }}" />
+  </div>
+  <div class="form-group">
+    <label for="dicaPresente">Uma dica do que o participante quer ganhar</label>
+    <input type="text" class="form-control" name="dicaPresente" id="dicaPresenbte" value="{{$dados->dicaPresente}}">
   </div>
 </form>
 

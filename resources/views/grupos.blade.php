@@ -1,5 +1,5 @@
-@extends('logged.layout')
 <!-- MEU GRUPO -->
+@extends('logged.layout')
 @section('content')
 <body>
     <table>
@@ -25,5 +25,6 @@
     </tbody>
     </table>
     <a href="{{url('meugrupo/revelar')}}" class="button">Revelar meu amigo oculto</a>
+    <a href="{{url('meuperfil')}}" class="button">Voltar para a página de perfil</a>
 </body>
 @endsection

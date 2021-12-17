@@ -1,9 +1,5 @@
 <?php
 
-use App\Http\Controllers\ArmazenamentoController;
-use App\Http\Controllers\Initial\GrupoController;
-use App\Http\Controllers\Initial\MensagemController;
-use App\Http\Controllers\Initial\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,10 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [InicioController::class, "index"]);
-
-Route::middleware(['auth:sanctum', 'verified'])->group(function () {
-    Route::get('/dashboard', function () {
-        return view('dashboard');
-      })->name('dashboard');
+Route::get('/', function () {
+    return view('welcome');
 });
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/meugrupo', [App\Http\Controllers\GrupoController::class, 'index']);
+Route::get('/criargrupo', [App\Http\Controllers\ArmazenamentoController::class, 'create']);
+Route::get('/meugrupo/revelar', [App\Http\Controllers\MensagemController::class, 'show']);
+Route::post('/meuperfil', [App\Http\Controllers\UserController::class, 'index']);
